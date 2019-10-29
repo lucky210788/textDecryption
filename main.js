@@ -13,15 +13,15 @@ let textDecryption = (string) => {
     let textMessage = 'Need to press ';
     const arrLetters = string.toLowerCase().split('');
 
-    for (let y = 0; y < arrLetters.length; y++) {
-        for (let prop in alphabet) {
-            let tempArr = alphabet[prop];
-            let indexLetter = tempArr.indexOf(arrLetters[y]);
+    arrLetters.forEach((letter) => {
+        for (const prop in alphabet) {
+            const tempArr = alphabet[prop];
+            const indexLetter = tempArr.indexOf(letter);
             if (indexLetter !== -1) {
                 textMessage += `\n the button ${prop} ${indexLetter + 1} times `
             }
         }
-    }
+    });
     console.log(textMessage);
 };
 
